@@ -20,9 +20,6 @@
                         <a href="admin-mahasiswa.php" class="dropdown-item">Mahasiswa</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -33,20 +30,23 @@
                         <a href="admin-bulanan.php" class="dropdown-item">Bulanan</a>
                     </div>
                 </li>
+                <?php if (!$this->session->userdata('is_login')) : ?>
                 <li class="nav-item">
-                    <a href="login.php" class="nav-link">Login</a>
+                    <a href="<?= base_url('/login'); ?>" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="register.php" class="nav-link">Register</a>
+                    <a href="<?= base_url('/register'); ?>" class="nav-link">Register</a>
                 </li>
+                <?php else : ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Admin</a>
+                    <a class="nav-link dropdown-toggle text-capitalize" href="#" id="dropdown--3" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><?= $this->session->userdata('name'); ?></a>
                     <div class="dropdown-menu" aria-labelledby="dropdown--3">
                         <a href="profile.php" class="dropdown-item">Profile</a>
-                        <a href="#" class="dropdown-item">Logout</a>
+                        <a href="<?= base_url('/logout'); ?>" class="dropdown-item">Logout</a>
                     </div>
                 </li>
+                <?php endif ?>
             </ul>
         </div>
     </div>
