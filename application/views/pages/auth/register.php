@@ -19,7 +19,7 @@
                         <?= form_error('password'); ?>
                     </div>
                     <div class="form-group">
-                        <label for="">Konformasi Password</label>
+                        <label for="">Konfirmasi Password</label>
                         <?= form_password('password_confirmation', '', ['class' => 'form-control', 'placeholder' => 'Masukkan Password yang sama', 'required' => true]); ?>
                         <?= form_error('password_confirmation'); ?>
                     </div>

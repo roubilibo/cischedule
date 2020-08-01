@@ -6,7 +6,7 @@ class MY_Model extends CI_Model
 {
 
     protected $table    = '';
-    protected $perPage  = 20;
+    protected $perPage  = 5;
 
     public function __construct()
     {

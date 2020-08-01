@@ -52,7 +52,7 @@ class Register_model extends MY_Model
 
         $sess_data  = [
 
-            'id'        => $user,
+            'id_user'   => $user,
             'name'      => $data['name'],
             'role'      => $data['role'],
             'is_login'  => true

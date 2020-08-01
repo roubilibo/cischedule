@@ -41,7 +41,7 @@ class Login_model extends MY_Model
 
         if (!empty($query)) {
             $sess_data = [
-                'id'        => $query->id,
+                'id_user'   => $query->id,
                 'name'      => $query->name,
                 'role'      => $query->role,
                 'is_login'  => true,
@@ -52,7 +52,7 @@ class Login_model extends MY_Model
 
         if (!empty($query) && hashEncryptVerify($input->password, $query->password)) {
             $sess_data = [
-                'id'        => $query->id,
+                'id_user'   => $query->id,
                 'name'      => $query->name,
                 'role'      => $query->role,
                 'is_login'  => true,
