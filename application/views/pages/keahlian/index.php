@@ -26,19 +26,20 @@
                                 <td><strong><?php echo $no++; ?></strong></td>
                                 <td><?= $row->nama_keahlian ?></td>
                                 <td>
+                                    <?= form_open("keahlian/delete/$row->id_keahlian", ['method' => 'POST']) ?>
+                                    <?= form_hidden('id_keahlian', $row->id_keahlian) ?>
                                     <a href="<?= base_url("keahlian/edit/$row->id_keahlian") ?>">
                                         <button class="btn btn-sm">
                                             <i class="fas fa-edit text-info"></i>
                                         </button>
                                     </a>
                                     <span>
-                                        <a href="admin-hapus-keahlian.php?id_keahlian=">
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </a>
+                                        <button class="btn btn-sm" type="submit"
+                                            onclick="return confirm('Are You Sure?')">
+                                            <i class="fas fa-trash text-danger"></i>
+                                        </button>
                                     </span>
+                                    <?= form_close() ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

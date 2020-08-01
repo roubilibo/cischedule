@@ -83,6 +83,27 @@ class Keahlian extends MY_Controller
 
         redirect(base_url('keahlian'));
     }
+
+    public function delete($id_keahlian)
+    {
+        if (!$_POST) {
+            redirect(base_url('keahlian'));
+        }
+
+
+        if (!$this->keahlian->where('id_keahlian', $id_keahlian)->first()) {
+            $this->session->set_flashdata('warning', 'Maaf! Data tidak ditemukan');
+            redirect(base_url('keahlian'));
+        }
+
+        if ($this->keahlian->where('id_keahlian', $id_keahlian)->delete()) {
+            $this->session->set_flashdata('success', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('error', 'Terjadi kesalahan');
+        }
+
+        redirect(base_url('keahlian'));
+    }
 }
 
 /* End of file Kampus.php */

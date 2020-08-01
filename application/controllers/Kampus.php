@@ -83,6 +83,27 @@ class Kampus extends MY_Controller
 
         redirect(base_url('kampus'));
     }
+
+    public function delete($id_kampus)
+    {
+        if (!$_POST) {
+            redirect(base_url('kampus'));
+        }
+
+
+        if (!$this->kampus->where('id_kampus', $id_kampus)->first()) {
+            $this->session->set_flashdata('warning', 'Maaf! Data tidak ditemukan');
+            redirect(base_url('kampus'));
+        }
+
+        if ($this->kampus->where('id_kampus', $id_kampus)->delete()) {
+            $this->session->set_flashdata('success', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('error', 'Terjadi kesalahan');
+        }
+
+        redirect(base_url('kampus'));
+    }
 }
 
 /* End of file Kampus.php */

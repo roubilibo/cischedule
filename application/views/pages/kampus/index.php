@@ -28,19 +28,20 @@
                                 <td><?= $row->nama_kampus ?></td>
                                 <td><?= $row->kota_kampus ?></td>
                                 <td>
+                                    <?= form_open("kampus/delete/$row->id_kampus", ['method' => 'POST']) ?>
+                                    <?= form_hidden('id_kampus', $row->id_kampus) ?>
                                     <a href="<?= base_url("kampus/edit/$row->id_kampus") ?>">
                                         <button class="btn btn-sm">
                                             <i class="fas fa-edit text-info"></i>
                                         </button>
                                     </a>
                                     <span>
-                                        <a href="admin-hapus-kampus.php?id_kampus">
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </a>
+                                        <button class="btn btn-sm" type="submit"
+                                            onclick="return confirm('Are You Sure?')">
+                                            <i class="fas fa-trash text-danger"></i>
+                                        </button>
                                     </span>
+                                    <?= form_close() ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
