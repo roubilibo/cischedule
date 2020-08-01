@@ -17,7 +17,7 @@
                         <a href="<?= base_url('kampus') ?>" class="dropdown-item">Kampus</a>
                         <a href="<?= base_url('keahlian') ?>" class="dropdown-item">Keahlian</a>
                         <a href="admin-kmahasiswa.php" class="dropdown-item">Keahlian Mahasiswa</a>
-                        <a href="admin-mahasiswa.php" class="dropdown-item">Mahasiswa</a>
+                        <a href="<?= base_url('mahasiswa') ?>" class="dropdown-item">Mahasiswa</a>
                     </div>
                 </li>
             </ul>
