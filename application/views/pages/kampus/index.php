@@ -30,10 +30,8 @@
                                 <td>
                                     <?= form_open("kampus/delete/$row->id_kampus", ['method' => 'POST']) ?>
                                     <?= form_hidden('id_kampus', $row->id_kampus) ?>
-                                    <a href="<?= base_url("kampus/edit/$row->id_kampus") ?>">
-                                        <button class="btn btn-sm">
-                                            <i class="fas fa-edit text-info"></i>
-                                        </button>
+                                    <a href="<?= base_url("kampus/edit/$row->id_kampus") ?>" class="btn btn-sm">
+                                        <i class="fas fa-edit text-info"></i>
                                     </a>
                                     <span>
                                         <button class="btn btn-sm" type="submit"

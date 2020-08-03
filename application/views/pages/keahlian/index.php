@@ -28,10 +28,8 @@
                                 <td>
                                     <?= form_open("keahlian/delete/$row->id_keahlian", ['method' => 'POST']) ?>
                                     <?= form_hidden('id_keahlian', $row->id_keahlian) ?>
-                                    <a href="<?= base_url("keahlian/edit/$row->id_keahlian") ?>">
-                                        <button class="btn btn-sm">
-                                            <i class="fas fa-edit text-info"></i>
-                                        </button>
+                                    <a href="<?= base_url("keahlian/edit/$row->id_keahlian") ?>" class="btn btn-sm">
+                                        <i class="fas fa-edit text-info"></i>
                                     </a>
                                     <span>
                                         <button class="btn btn-sm" type="submit"
